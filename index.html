@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oh-My-Git - Simplified Git Commands</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-black text-gray-200">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full bg-black bg-opacity-90 backdrop-filter backdrop-blur z-50"
+    >
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-green-400">Oh-My-Git</span>
+          <div class="space-x-8">
+            <a href="#features" class="hover:text-green-400">Features</a>
+            <a href="#install" class="hover:text-green-400">Install</a>
+            <a href="#docs" class="hover:text-green-400">Docs</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="min-h-screen flex items-center justify-center pt-16">
+      <div class="container mx-auto px-6 text-center">
+        <h1
+          class="text-6xl font-bold mb-8 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
+        >
+          Git Made Human
+        </h1>
+        <p class="text-xl mb-12 text-gray-400 max-w-2xl mx-auto">
+          Stop memorizing Git commands. Use plain English instead.
+        </p>
+        <div
+          class="bg-gray-900 p-6 rounded-xl shadow-2xl mx-auto max-w-2xl overflow-hidden"
+        >
+          <pre class="text-left text-green-400">
+$ omg create branch feature
+Branch 'feature' created successfully
+
+$ omg switch to branch feature
+Switched to branch 'feature'
+
+$ omg list branches
+* feature
+  main
+  develop</pre
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <section id="features" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-16 text-center">Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div
+            class="bg-gray-900 p-8 rounded-2xl transform hover:scale-105 transition-transform"
+          >
+            <h3 class="text-2xl font-bold mb-4 text-green-400">
+              Intuitive Commands
+            </h3>
+            <p class="text-gray-400">
+              Write Git commands as you'd explain them to a colleague
+            </p>
+          </div>
+          <div
+            class="bg-gray-900 p-8 rounded-2xl transform hover:scale-105 transition-transform"
+          >
+            <h3 class="text-2xl font-bold mb-4 text-green-400">
+              Zero Learning Curve
+            </h3>
+            <p class="text-gray-400">
+              If you can speak English, you can use Oh-My-Git
+            </p>
+          </div>
+          <div
+            class="bg-gray-900 p-8 rounded-2xl transform hover:scale-105 transition-transform"
+          >
+            <h3 class="text-2xl font-bold mb-4 text-green-400">
+              Shell Compatible
+            </h3>
+            <p class="text-gray-400">
+              Works with both Bash and Zsh out of the box
+            </p>
+          </div>
+          <div
+            class="bg-gray-900 p-8 rounded-2xl transform hover:scale-105 transition-transform"
+          >
+            <h3 class="text-2xl font-bold mb-4 text-green-400">Quick Setup</h3>
+            <p class="text-gray-400">
+              One command to install, zero configuration needed
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation -->
+    <section id="install" class="py-20 bg-gray-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-16 text-center">Installation</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- One-Line Install Card -->
+          <div class="bg-black p-8 rounded-2xl">
+            <h3 class="text-xl font-bold mb-4 text-gray-400">
+              One-Line Install
+            </h3>
+            <div
+              class="relative bg-gray-900 mb-6"
+              style="
+                height: 40px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <pre
+                id="curl-command"
+                class="text-green-400 select-all ml-5 mr-1"
+                style="overflow: hidden"
+              >
+curl -sSL https://raw.githubusercontent.com/imcodekhan/oh-my-git/master/install.sh | bash</pre
+              >
+              <button
+                id="copy"
+                onclick="copyToClipboard()"
+                class="absolute top-0 right-0 bg-green-400 text-black p-2 rounded text-sm"
+              >
+                Copy
+              </button>
+            </div>
+            <p class="text-gray-400 mb-4">The installer will:</p>
+            <ul class="list-disc list-inside text-gray-400 space-y-2">
+              <li>Download Oh-My-Git scripts</li>
+              <li>Set up shell aliases</li>
+              <li>Configure your environment</li>
+            </ul>
+          </div>
+
+          <!-- Manual Setup Card -->
+          <div class="bg-black p-8 rounded-2xl">
+            <h3 class="text-xl font-bold mb-4 text-gray-400">Manual Setup</h3>
+            <p class="text-gray-400 mb-4">
+              If you prefer to set up Oh-My-Git manually, follow these steps:
+            </p>
+            <pre class="text-green-400 mb-6">
+# Clone repository
+git clone https://github.com/imcodekhan/oh-my-git.git ~/.oh-my-git
+
+# Add to shell config (choose one)
+echo 'source ~/.oh-my-git/oh-my-git.sh' >> ~/.bashrc
+echo 'source ~/.oh-my-git/oh-my-git.sh' >> ~/.zshrc
+
+# Add alias
+echo 'alias omg="oh-my-git"' >> ~/.bashrc  # or .zshrc
+
+# Reload shell
+source ~/.bashrc  # or source ~/.zshrc</pre
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documentation -->
+    <section id="docs" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-16 text-center">Commands</h2>
+        <div class="max-w-4xl mx-auto space-y-8">
+          <div class="bg-gray-900 p-6 rounded-2xl">
+            <h3 class="text-xl font-bold mb-4 text-green-400">
+              Branch Management
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <code
+                  class="bg-black px-4 py-2 rounded text-green-400 min-w-max"
+                  >omg create branch &lt;name&gt;</code
+                >
+                <span class="text-gray-400">Create a new branch</span>
+              </div>
+              <div class="flex items-start space-x-4">
+                <code
+                  class="bg-black px-4 py-2 rounded text-green-400 min-w-max"
+                  >omg switch branch &lt;name&gt;</code
+                >
+                <span class="text-gray-400">Switch to a branch</span>
+              </div>
+              <div class="flex items-start space-x-4">
+                <code
+                  class="bg-black px-4 py-2 rounded text-green-400 min-w-max"
+                  >omg list branches</code
+                >
+                <span class="text-gray-400">Show all branches</span>
+              </div>
+              <div class="flex items-start space-x-4">
+                <code
+                  class="bg-black px-4 py-2 rounded text-green-400 min-w-max"
+                  >omg delete branch &lt;name&gt;</code
+                >
+                <span class="text-gray-400">Delete a branch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-gray-400">Released under MIT License</p>
+        <div class="mt-4 space-x-4">
+          <a
+            href="https://github.com/imcodekhan/oh-my-git"
+            class="text-green-400 hover:text-green-300"
+            >GitHub</a
+          >
+          <a href="#" class="text-green-400 hover:text-green-300"
+            >Documentation</a
+          >
+          <a
+            href="https://github.com/imcodekhan/oh-my-git/issues"
+            class="text-green-400 hover:text-green-300"
+            >Report Issue</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    function copyToClipboard() {
+      const curlCommand = document.getElementById("curl-command");
+      navigator.clipboard.writeText(curlCommand.textContent).then(() => {
+        document.getElementById("copy").innerHTML = "Copied";
+        setTimeout(() => {
+          document.getElementById("copy").innerHTML = "Copy";
+        }, [500]);
+      });
+    }
+  </script>
+</html>
